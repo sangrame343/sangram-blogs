@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row" *ngIf="blogDetails">
+    <div class="col-lg-6 mt-3 ">
+      <img src="{{blogDetails.img}}" alt="">
+    </div>
+  
+    <div class="col-lg-6 mt-3 post-title-block ">
+      <h1 class="text-center mb-5">{{ blogDetails.title }}</h1>
+     
+      <p class="lead">Description:<br>{{ blogDetails.content }}</p>
+
+      <ul class="list-inline text-center">
+        <li>Username: {{ blogDetails.username }}</li>
+        <li>Category | {{ blogDetails.category }}</li>
+        <li>Date | {{ blogDetails.date }}</li>
+      </ul>
+      <div class="action-button">
+        <div class="card-footer">
+          <button class="btn btn-outline-primary " data-bs-toggle="modal" data-bs-target="#editModal" type="button" (click)="editPost(post)">Edit</button>
+          <div class="btn btn-outline-danger " (click)="deletePostData(post)">Delete</div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
